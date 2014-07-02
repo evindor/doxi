@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/evindor/doxi",
   "dependencies": {
-    "dox": "https://github.com/evindor/dox/tarball/master"
+    "dox": "https://github.com/evindor/dox/tarball/master",
+    "jade": "^1.3.1"
   }
 }
