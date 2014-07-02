@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/evindor/doxi/issues"
   },
-  "homepage": "https://github.com/evindor/doxi"
+  "homepage": "https://github.com/evindor/doxi",
+  "dependencies": {
+    "dox": "https://github.com/evindor/dox/tarball/master"
+  }
 }
