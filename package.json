@@ -1,0 +1,24 @@
+{
+  "name": "doxi",
+  "version": "0.0.0",
+  "description": "Customisable documentation generator on top of TJ's dox",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/evindor/doxi.git"
+  },
+  "keywords": [
+    "documentation",
+    "dox",
+    "jsdoc"
+  ],
+  "author": "Arseny Zarechnev <me@evindor.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evindor/doxi/issues"
+  },
+  "homepage": "https://github.com/evindor/doxi"
+}
