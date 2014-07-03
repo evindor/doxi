@@ -1,0 +1,39 @@
+doctype html
+head
+    each stylesheet in stylesheets
+        link(rel="stylesheet", href=stylesheet)
+body
+    div.row
+        div.large-3.medium-4.columns
+            div.sidebar
+                h6!= heading
+                form
+                    input(type="search", placeholder="Search")
+                nav
+                    ul.side-nav
+                        each def in data
+                            each tag in def.tags
+                                if tag.type == "group"
+                                        li.heading= tag.string
+                            li
+                                a(href="#" + def.ctx.name)!= def.ctx.name
+        div.large-9.medium-8.columns
+            each def in data
+                h2(id=def.ctx.name)!= def.ctx.name
+                p!= def.description.full
+                h5 Arguments
+                table.arguments
+                    each tag in def.tags
+                        if tag.type == "param" || tag.type == "property"
+                            tr
+                                td!= tag.name
+                                td!= tag.types && tag.types.join(", ")
+                                td!= tag.description
+                if def.ctx.type == "function"
+                    h5 Returns
+                        each tag in def.tags
+                            if tag.type == "return" || tag.type == "returns"
+                                p
+                                    | Type - 
+                                    != tag.types.join(", ")
+                        
