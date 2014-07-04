@@ -11,29 +11,30 @@ body
                     input(type="search", placeholder="Search")
                 nav
                     ul.side-nav
-                        each def in data
-                            each tag in def.tags
-                                if tag.type == "group"
-                                        li.heading= tag.string
-                            li
-                                a(href="#" + def.ctx.name)!= def.ctx.name
+                        each group in data
+                            if group.name
+                                li.heading= group.name
+                            each item in group.items
+                                li
+                                    a(href="#" + item.ctx.name)!= item.ctx.name
         div.large-9.medium-8.columns
-            each def in data
-                h2(id=def.ctx.name)!= def.ctx.name
-                p!= def.description.full
-                h5 Arguments
-                table.arguments
-                    each tag in def.tags
-                        if tag.type == "param" || tag.type == "property"
-                            tr
-                                td!= tag.name
-                                td!= tag.types && tag.types.join(", ")
-                                td!= tag.description
-                if def.ctx.type == "function"
-                    h5 Returns
-                        each tag in def.tags
-                            if tag.type == "return" || tag.type == "returns"
-                                p
-                                    | Type - 
-                                    != tag.types.join(", ")
-                        
+            each group in data
+                each item in group.items
+                    h2(id=item.ctx.name)!= item.ctx.name
+                    p!= item.description.full
+                    h5 Arguments
+                    table.arguments
+                        each tag in item.tags
+                            if tag.type == "param" || tag.type == "property"
+                                tr
+                                    td!= tag.name
+                                    td!= tag.types && tag.types.join(", ")
+                                    td!= tag.description
+                    if item.ctx.type == "function"
+                        h5 Returns
+                            each tag in item.tags
+                                if tag.type == "return" || tag.type == "returns"
+                                    p
+                                        | Type - 
+                                        != tag.types.join(", ")
+                            
