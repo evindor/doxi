@@ -1,0 +1,23 @@
+.sidebar {
+    background-color: #FAFAFA;
+    padding: 30px 20px;
+}
+
+.row {
+    max-width: 80rem;
+}
+
+.arguments {
+    max-width: 50rem;
+}
+
+code {
+    padding-left: 2rem;
+    color: inherit;
+}
+
+pre {
+    background-color: #FAFAFA;
+    padding: 1rem;
+    max-width: 50rem;
+}
