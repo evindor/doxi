@@ -1,10 +1,67 @@
+/*
+ * === Global styles ===
+ */
+body {
+    font-family: proxima-nova, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: rgb(0, 140, 220);
+}
+
+/*
+ * === Sidebar styles ===
+ */
 .sidebar {
     background-color: #FAFAFA;
     padding: 30px 20px;
+    width: 220px;
+    padding: 0 20px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: scroll;
 }
 
-.row {
-    max-width: 80rem;
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li:before {
+    content: "- ";
+}
+
+.sidebar li.heading {
+    font-size: 110%;
+    margin: 10px 0 2px 0;
+}
+
+.sidebar li.heading:before {
+    content: "";
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+.label {
+    font-weight: normal;
+    font-size: 150%;
+}
+
+/*
+ * === Content styles ===
+ */
+.content {
+    padding-left: 240px;
 }
 
 .arguments {

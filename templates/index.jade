@@ -3,38 +3,38 @@ head
     each stylesheet in stylesheets
         link(rel="stylesheet", href=stylesheet)
 body
-    div.row
-        div.large-3.medium-4.columns
-            div.sidebar
-                h6!= heading
-                form
-                    input(type="search", placeholder="Search")
-                nav
-                    ul.side-nav
-                        each group in data
-                            if group.name
-                                li.heading= group.name
-                            each item in group.items
-                                li
-                                    a(href="#" + item.ctx.name)!= item.ctx.name
-        div.large-9.medium-8.columns
-            each group in data
-                each item in group.items
-                    h2(id=item.ctx.name)!= item.ctx.name
-                    p!= item.description.full
-                    h5 Arguments
-                    table.arguments
+    div.sidebar
+        h1.label!= heading
+        nav
+            ul.side-nav
+                each group in data
+                    if group.name
+                        li.heading= group.name
+                    each item in group.items
+                        li
+                            a(href="#" + item.name)!= item.name
+    div.content
+        each group in data
+            each item in group.items
+                h2(id=item.name)!= item.name
+                p!= item.description.full
+                each tag in item.tags
+                    if tag.type == "example"
+                        h5 Example
+                        != tag.string
+                h5 Arguments
+                table.arguments
+                    each tag in item.tags
+                        if tag.type == "param" || tag.type == "property"
+                            tr
+                                td!= tag.name
+                                td!= tag.types && tag.types.join(", ")
+                                td!= tag.description
+                if item.ctx.type == "function"
+                    h5 Returns
                         each tag in item.tags
-                            if tag.type == "param" || tag.type == "property"
-                                tr
-                                    td!= tag.name
-                                    td!= tag.types && tag.types.join(", ")
-                                    td!= tag.description
-                    if item.ctx.type == "function"
-                        h5 Returns
-                            each tag in item.tags
-                                if tag.type == "return" || tag.type == "returns"
-                                    p
-                                        | Type - 
-                                        != tag.types.join(", ")
-                            
+                            if tag.type == "return" || tag.type == "returns"
+                                p
+                                    | Type - 
+                                    != tag.types.join(", ")
+                        
