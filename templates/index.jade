@@ -2,25 +2,28 @@ doctype html
 head
     each stylesheet in stylesheets
         link(rel="stylesheet", href=stylesheet)
-body
+body(id=heading)
     div.sidebar
-        h1.label!= heading
+        h1.label
+            a(href="#" + heading)!= heading
         nav
             ul.side-nav
                 each group in data.comments
                     if group.name
                         li.heading
-                            h4= group.name
+                            h4
+                                a(href="#" + group.name)= group.name
                     each item in group.items
-                        li
-                            a(href="#" + item.name)!= item.name
+                        if item.name
+                            li
+                                a(href="#" + item.name)!= item.name
     div.content-wrap
         div.content
             if data.introduction
-                p!= data.introduction
+                span!= data.introduction
             each group in data.comments
                 if group.name.length
-                    h1.groupname!= group.name
+                    h1.groupname(id=group.name)!= group.name
                 if group.text.length
                     p!= group.text
                 each item in group.items
@@ -33,23 +36,24 @@ body
                         if tag.type == "example"
                             h3 Example
                             pre!= tag.string
-                    h3 Arguments
-                    table.arguments
-                        tr
-                            th Name
-                            th Type
-                            th Description
-                        each tag in item.tags
-                            if tag.type == "param" || tag.type == "property"
-                                tr
-                                    td!= tag.name
-                                    td!= tag.types && tag.types.join(", ")
-                                    td!= tag.description
-                    if item.ctx.type == "function"
-                        h3 Returns
-                        each tag in item.tags
-                            if tag.type == "return" || tag.type == "returns"
-                                p
-                                    | Type - 
-                                    != tag.types.join(", ")
-                            
+                    if item.hasArguments
+                        h3 Arguments
+                        table.arguments
+                            tr
+                                th Name
+                                th Type
+                                th Description
+                            each tag in item.tags
+                                if tag.type == "param" || tag.type == "property"
+                                    tr
+                                        td!= tag.name
+                                        td!= tag.types && tag.types.join(", ")
+                                        td!= tag.description
+                        if item.ctx && item.ctx.type == "function"
+                            h3 Returns
+                            each tag in item.tags
+                                if tag.type == "return" || tag.type == "returns"
+                                    p
+                                        | Type - 
+                                        != tag.types.join(", ")
+                                
