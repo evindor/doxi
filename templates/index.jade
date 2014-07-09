@@ -7,16 +7,18 @@ body
         h1.label!= heading
         nav
             ul.side-nav
-                each group in data
+                each group in data.comments
                     if group.name
                         li.heading
-                            h3= group.name
+                            h4= group.name
                     each item in group.items
                         li
                             a(href="#" + item.name)!= item.name
     div.content-wrap
         div.content
-            each group in data
+            if data.introduction
+                p!= data.introduction
+            each group in data.comments
                 if group.name.length
                     h1.groupname!= group.name
                 if group.text.length
