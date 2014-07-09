@@ -21,7 +21,7 @@ body
                 each tag in item.tags
                     if tag.type == "example"
                         h5 Example
-                        != tag.string
+                        pre!= tag.string
                 h5 Arguments
                 table.arguments
                     each tag in item.tags
