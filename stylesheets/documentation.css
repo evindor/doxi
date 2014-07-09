@@ -1,8 +1,27 @@
 /*
  * === Global styles ===
  */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans:400,700&subset=latin,cyrillic);
 body {
-    font-family: proxima-nova, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    min-width: 800px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 30px;
 }
 
 a {
@@ -22,7 +41,7 @@ a {
     position: fixed;
     height: 100%;
     box-sizing: border-box;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .sidebar ul {
@@ -35,9 +54,8 @@ a {
     content: "- ";
 }
 
-.sidebar li.heading {
-    font-size: 110%;
-    margin: 10px 0 2px 0;
+.sidebar li.heading h3 {
+    margin: 10px 0 5px 0;
 }
 
 .sidebar li.heading:before {
@@ -60,21 +78,29 @@ a {
 /*
  * === Content styles ===
  */
-.content {
+.content-wrap {
     padding-left: 240px;
+    padding-bottom: 40px;
 }
 
-.arguments {
-    max-width: 50rem;
+.content {
+    width: 90%;
+    margin: 0 auto;
 }
 
-code {
-    padding-left: 2rem;
-    color: inherit;
+.groupname {
+    text-align: center;
+    border-bottom: 2px dashed #eaeaea
 }
 
 pre {
     background-color: #FAFAFA;
     padding: 1rem;
-    max-width: 50rem;
+}
+
+.content td,
+.content th {
+    padding: 1rem;
+    border-bottom: 1px solid #eaeaea;
+    text-align: left;
 }
