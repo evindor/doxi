@@ -10,3 +10,5 @@ To accomplish this mission Doxi introduces custom JSDoc tags:
   Example: `@grouptext List of **application events**.`
 - `@api` is used to separate your internal JSDoc from the one you want to expose to public. Only `@api public` comments will be processed.
   Example: `@api public`.
+- `@oneliner` to show how it initialize your class or invoke method.
+  Example: `@oneliner var box = new Rect(0, 0, 10, 20)`.

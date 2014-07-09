@@ -22,7 +22,10 @@ body
                 if group.text.length
                     p!= group.text
                 each item in group.items
-                    h2(id=item.name)!= item.name
+                    h2(id=item.name)
+                        != item.name
+                        if item.oneliner
+                            span.oneliner!= item.oneliner
                     p!= item.description.full
                     each tag in item.tags
                         if tag.type == "example"

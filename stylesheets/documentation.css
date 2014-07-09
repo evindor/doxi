@@ -1,7 +1,7 @@
 /*
  * === Global styles ===
  */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans:400,700&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans:400,700|Inconsolata&subset=latin,cyrillic);
 body {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     min-width: 800px;
@@ -93,9 +93,16 @@ a {
     border-bottom: 2px dashed #eaeaea
 }
 
+.oneliner {
+    font-size: 40%;
+    margin-left: 20px;
+    font-family: "Inconsolata", monospace;
+}
+
 pre {
     background-color: #FAFAFA;
     padding: 1rem;
+    font-family: "Inconsolata", monospace;
 }
 
 .content td,
