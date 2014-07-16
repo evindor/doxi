@@ -1,11 +1,13 @@
 doctype html
 head
+    title= title
     each stylesheet in stylesheets
         link(rel="stylesheet", href=stylesheet)
 body(id=heading)
     div.sidebar
-        h1.label
-            a(href="#" + heading)!= heading
+        if heading
+            h1.label
+                a(href="#" + heading)!= heading
         nav
             ul.side-nav
                 each group in data.comments
@@ -49,11 +51,14 @@ body(id=heading)
                                         td!= tag.name
                                         td!= tag.types && tag.types.join(", ")
                                         td!= tag.description
-                        if item.ctx && item.ctx.type == "function"
+                        if item.hasReturns
                             h3 Returns
                             each tag in item.tags
                                 if tag.type == "return" || tag.type == "returns"
                                     p
                                         | Type - 
                                         != tag.types.join(", ")
+                                        if tag.description
+                                            br
+                                            != tag.description
                                 
