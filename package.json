@@ -1,6 +1,6 @@
 {
   "name": "doxi",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Customisable documentation generator on top of TJ's dox",
   "main": "index.js",
   "scripts": {
