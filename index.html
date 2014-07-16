@@ -1,5 +1,43 @@
-<!DOCTYPE html><head><link rel="stylesheet" href="normalize.css"><link rel="stylesheet" href="solarized.css"><link rel="stylesheet" href="documentation.css"></head><body id="Doxi"><div class="sidebar"><h1 class="label"><a href="#Doxi">Doxi</a></h1><nav><ul class="side-nav"><li class="heading"><h4><a href="#Installation">Installation</a></h4></li><li class="heading"><h4><a href="#Options">Options</a></h4></li><li class="heading"><h4><a href="#Usage instructions">Usage instructions</a></h4></li></ul></nav></div><div class="content-wrap"><div class="content"><span><p><h1 style="text-align: center; margin-bottom: 10px;">Doxi</h1></p><p><h2 style="text-align: center; margin-top: 0;">Document your API from code</h1><br />Doxi is intended to help you build a great single page documentation for your API.</p><p>Document your API with JSDoc right inside your code.</p><p>Join your JSDoc comments from all your files into logical groups.</p><p>Use markdown.</p><p>Be awesome!</p></span><h1 id="Installation" class="groupname">Installation</h1><p><pre><code>npm install --save doxi
-</code></pre></p><h2 id=""></h2><p><p>&nbsp;</p></p><h1 id="Options" class="groupname">Options</h1><h2 id=""></h2><p><p>Doxi is configurable through a set of options:</p></p><h3>Arguments</h3><table class="arguments"><tr><th>Name</th><th>Type</th><th>Description</th></tr><tr><td>template</td><td>string</td><td>path to your custom template</td></tr><tr><td>heading</td><td>string</td><td>label to display in top left corner</td></tr><tr><td>stylesheets</td><td>Array</td><td>list of paths to stylesheets you want to be included</td></tr></table><h1 id="Usage instructions" class="groupname">Usage instructions</h1><h2 id=""></h2><p><p>For now Doxi can be used only with gulp.</p></p><h3>Example</h3><pre>    gulp.task(<span class="hljs-string">'default'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+<!DOCTYPE html><head><title>Doxi</title><link rel="stylesheet" href="normalize.css"><link rel="stylesheet" href="solarized.css"><link rel="stylesheet" href="documentation.css"></head><body id="Doxi"><div class="sidebar"><h1 class="label"><a href="#Doxi">Doxi</a></h1><nav><ul class="side-nav"><li class="heading"><h4><a href="#Custom tags">Custom tags</a></h4></li><li><a href="#@group">@group</a></li><li><a href="#@grouptext">@grouptext</a></li><li><a href="#@introduction">@introduction</a></li><li><a href="#@oneliner">@oneliner</a></li><li class="heading"><h4><a href="#Installation">Installation</a></h4></li><li class="heading"><h4><a href="#Options">Options</a></h4></li><li><a href="#options">options</a></li><li class="heading"><h4><a href="#Usage instructions">Usage instructions</a></h4></li></ul></nav></div><div class="content-wrap"><div class="content"><span><p><h1 style="text-align: center; margin-bottom: 10px;">Doxi</h1></p><p><h2 style="text-align: center; margin-top: 0;">Document your API from code</h1><br />Doxi is intended to help you build a great single page documentation for your API. This page is the result of running Doxi against it&#39;s own <a href="https://github.com/evindor/doxi">source code</a>.</p><p>Doxi was created for the following use case: you have a closed source project with public API. You don&#39;t want to maintain a separate markdown/html documentation, as well you do not want ot disclose your code, file structure and module names. Here Doxi comes in handy. </p><ul>
+<li><p>Document your API with JSDoc right inside your code.</p></li>
+<li><p>Join your JSDoc comments from all your files into logical groups.</p></li>
+<li><p>Use markdown.</p></li>
+<li><p>Be awesome!<br /><a href="https://github.com/evindor/doxi"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a></p></li>
+</ul>
+</span><h1 id="Custom tags" class="groupname">Custom tags</h1><p>
+<p><a href="https://github.com/evindor/doxi">Doxi</a> introduces some custom JSDoc tags so you could manage how the documentation will be rendered.</p></p><h2 id="@group">@group</h2><p><p>Join comments from separate files into a single logical group.<br />Check the sidebar - &quot;Custom tags&quot;, &quot;Installation&quot;, &quot;Options&quot; and &quot;Usage instructions&quot; are all groups.</p></p><h2 id="@grouptext">@grouptext</h2><p><p>Used to create a description for the group. You can use markdown, it will be shown right under group heading.</p></p><h2 id="@introduction">@introduction</h2><p><p>You can see the output of <code>@introduction</code> tag on top of this page. Use it to introduce your product, write a welcome text etc.<br /><code>@introduction</code> supports markdown and html.<br />It is advised to have only one <code>@inroduction</code>, however multiple <code>@introduction</code> tags will be joined in file name order.</p></p><h2 id="@oneliner">@oneliner<span class="oneliner"><span class="hljs-keyword">var</span> foo = <span class="hljs-keyword">new</span> Bar(<span class="hljs-number">1</span>, <span class="hljs-string">"hello"</span>);</span></h2><p><p>Used to display a pretty one-liner usage example near name. You can see the result just above these lines.</p></p><h1 id="Installation" class="groupname">Installation</h1><p><pre><code>npm install --save-dev doxi
+</code></pre></p><h2 id=""></h2><p></p><h1 id="Options" class="groupname">Options</h1><p><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>template</td>
+<td>string</td>
+<td>Path to your custom template</td>
+</tr>
+<tr>
+<td>heading</td>
+<td>string</td>
+<td>Label to display in top left corner</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Page title</td>
+</tr>
+<tr>
+<td>stylesheets</td>
+<td>Array</td>
+<td>List of paths to stylesheets you want to be included</td>
+</tr>
+</tbody>
+</table>
+</p><h2 id="options">options</h2><p></p><h1 id="Usage instructions" class="groupname">Usage instructions</h1><h2 id=""></h2><p><p>For now Doxi can be used only with gulp.</p></p><h3>Example</h3><pre>    gulp.task(<span class="hljs-string">'default'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
         gulp.src(<span class="hljs-string">'./lib/doxi.js'</span>)
             .pipe(doxi(<span class="hljs-string">'index.html'</span>, {template: <span class="hljs-string">'./templates/index.jade'</span>}))
             .pipe(gulp.dest(<span class="hljs-string">'./'</span>));
