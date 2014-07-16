@@ -5,8 +5,9 @@ head
         link(rel="stylesheet", href=stylesheet)
 body(id=heading)
     div.sidebar
-        h1.label
-            a(href="#" + heading)!= heading
+        if heading
+            h1.label
+                a(href="#" + heading)!= heading
         nav
             ul.side-nav
                 each group in data.comments
